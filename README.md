@@ -1,61 +1,36 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gomah/bluise)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Bluise - A Nuxt.js & Netlify CMS boilerplate.
+## Getting Started
 
-I wanted to explore Netlify CMS & Tailwind CSS, ended up creating this boilerplate.
-
-So far we've got:
-
-- Blog w/ posts, including pagination.
-- Configurable manifest & global settings.
-- CSS Markdown (Thanks to [https://github.com/iandinwoodie/github-markdown-tailwindcss/blob/master/markdown.css]).
-- Dynamic pages.
-- PWA ready.
-- SEO ready for posts & pages.
-- Signup form (using Netlify Forms).
-- Tools (Commitlint, Husky).
-- Typescript.
-
-Few things I'd like to add in the future:
-
-- Contact form under \_slug.
-- Dynamic sections/widgets.
-- Responsive CSS markdown.
-- Tests
-
-## Quickstart
-
-### Prerequisites
-
-- [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-tab)
-- [Node.js](https://nodejs.org/en/)
+First, run the development server:
 
 ```bash
-# ensure you have the prerequisites
-# install
-brew install node && brew install yarn
-
-# OR update
-brew update && brew upgrade && brew install yarn
-
-# install dependencies
-yarn install
-
-# serve with hot reload at localhost:3000
+npm run dev
+# or
 yarn dev
-
-# build for production with minification
-yarn generate
-
-# run all tests
-yarn test
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Using Netlify CMS
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Deploy to Netlify.
-2. Enable Identity under Settings.
-3. Configure registration preferences & external providers if needed.
-4. Enable Git Gateway.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-_Note: You'll need to specify the Netlify URL when browsing the admin page locally._
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
