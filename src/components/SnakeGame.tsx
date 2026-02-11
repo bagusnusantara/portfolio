@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTheme } from "next-themes";
 
 const SnakeGame: React.FC = () => {
+  const { theme } = useTheme();
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -123,12 +125,14 @@ const SnakeGame: React.FC = () => {
     const ctx = canvasRef.current?.getContext('2d');
     if (!ctx) return;
 
+    const isDark = theme === 'dark';
+
     // Clear background
-    ctx.fillStyle = '#022c22'; // Forest Dark
+    ctx.fillStyle = isDark ? '#022c22' : '#ecfdf5'; // Forest Dark : Emerald-50
     ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
     // Draw grid lines
-    ctx.strokeStyle = '#064e3b'; // Forest-900
+    ctx.strokeStyle = isDark ? '#064e3b' : '#d1fae5'; // Forest-900 : Emerald-100
     ctx.lineWidth = 0.5;
     for (let i = 0; i <= GRID_COUNT; i++) {
       ctx.beginPath();
@@ -163,7 +167,7 @@ const SnakeGame: React.FC = () => {
     ctx.fill();
 
     ctx.shadowBlur = 0;
-  }, [snake, food]);
+  }, [snake, food, theme]);
 
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto py-12 px-6">
@@ -176,7 +180,7 @@ const SnakeGame: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative border-4 border-emerald-900/50 rounded-xl overflow-hidden bg-slate-900 shadow-2xl">
+      <div className="relative border-4 border-emerald-900/50 dark:border-emerald-900/50 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 shadow-2xl">
         <canvas 
           ref={canvasRef} 
           width={CANVAS_SIZE} 
@@ -185,9 +189,9 @@ const SnakeGame: React.FC = () => {
         />
 
         {!isPlaying && !isGameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-emerald-950/80 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4 italic uppercase tracking-widest">Wilderness Monitor</h3>
-            <p className="text-slate-400 mb-6 text-center max-w-xs px-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 dark:bg-emerald-950/80 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 italic uppercase tracking-widest">Wilderness Monitor</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 text-center max-w-xs px-4">
               Navigate the dense forest. Collect wild berries to sustain your journey. Avoid the mountain edge!
             </p>
             <button 
@@ -196,7 +200,7 @@ const SnakeGame: React.FC = () => {
             >
               INITIALIZE TREK
             </button>
-            <p className="mt-4 text-[10px] text-slate-500 uppercase tracking-widest font-bold">Arrow Keys or WASD to navigate</p>
+            <p className="mt-4 text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Arrow Keys or WASD to navigate</p>
           </div>
         )}
 

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTheme } from "next-themes";
 
 const PipelineRunner: React.FC = () => {
+  const { theme } = useTheme();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [score, setScore] = useState(0);
@@ -125,11 +127,13 @@ const PipelineRunner: React.FC = () => {
     const ctx = canvas?.getContext('2d');
     if (!ctx || !canvas) return;
 
+    const isDark = theme === 'dark';
+
     // Clear canvas
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     // Draw Mountains (Far Background)
-    ctx.fillStyle = '#1e293b'; // Slate-800
+    ctx.fillStyle = isDark ? '#1e293b' : '#cbd5e1'; // Slate-800 : Slate-300
     ctx.beginPath();
     ctx.moveTo(0, 180);
     ctx.lineTo(100, 100);
@@ -141,7 +145,7 @@ const PipelineRunner: React.FC = () => {
     ctx.fill();
 
     // Draw Trail (Floor)
-    ctx.strokeStyle = '#451a03'; // Earth Brown
+    ctx.strokeStyle = isDark ? '#451a03' : '#78350f'; // Earth Brown : Red-900
     ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.moveTo(0, 180);
@@ -160,7 +164,7 @@ const PipelineRunner: React.FC = () => {
     ctx.fillRect(player.x, player.y, player.width, player.height);
     
     // Label
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = isDark ? '#fff' : '#0f172a';
     ctx.font = 'bold 9px Inter';
     ctx.fillText('PROCESS', player.x - 3, player.y - 10);
 
@@ -176,7 +180,7 @@ const PipelineRunner: React.FC = () => {
       ctx.lineTo(obs.x + obs.width, obs.y + obs.height);
       ctx.fill();
       
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = isDark ? '#fff' : '#0f172a';
       ctx.font = '8px Inter';
       ctx.fillText('INCIDENT', obs.x, obs.y - 5);
     });
@@ -204,7 +208,7 @@ const PipelineRunner: React.FC = () => {
       </div>
 
       <div 
-        className="relative w-full aspect-[4/1] bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden cursor-pointer shadow-inner"
+        className="relative w-full aspect-[4/1] bg-secondary/50 dark:bg-slate-900/50 rounded-2xl border border-border dark:border-slate-800 overflow-hidden cursor-pointer shadow-inner"
         onClick={jump}
       >
         <canvas 
@@ -215,17 +219,17 @@ const PipelineRunner: React.FC = () => {
         />
 
         {!isPlaying && !isGameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/80 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2 italic uppercase tracking-tighter">
-              <span className="text-emerald-500">Pipeline</span> Navigator
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 dark:bg-slate-950/80 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 italic uppercase tracking-tighter pt-8">
+              <span className="text-emerald-600 dark:text-emerald-500">Pipeline</span> Navigator
             </h3>
-            <p className="text-slate-400 mb-6 text-center max-w-sm px-6">
+            <p className="text-slate-600 dark:text-slate-400 mb-6 text-center max-w-sm px-6">
               Maintain system stability! Navigate through pipeline stages and bypass operational incidents.
             </p>
             <button className="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95">
               START PIPELINE
             </button>
-            <p className="mt-4 text-[10px] text-slate-500 uppercase tracking-widest">Jump to bypass incidents</p>
+            <p className="mt-4 text-[10px] text-muted-foreground uppercase tracking-widest">Jump to bypass incidents</p>
           </div>
         )}
 
