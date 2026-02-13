@@ -40,7 +40,7 @@ export default function Home() {
   ];
 
   const certifications = [
-    { name: "Google Cloud Associate Cloud Engineer", provider: "Google Cloud", year: "2025", icon: "/images/certifications/google-cloud.svg" },
+    { name: "Google Cloud Associate Cloud Engineer", provider: "Google Cloud", year: "2026", icon: "/images/certifications/google-cloud.svg" },
     { name: "OCI Certified Foundations Associate", provider: "Oracle", year: "2025", icon: "/images/certifications/oracle.svg" },
     { name: "AWS Certified Solutions Architect – Associate", provider: "Amazon Web Services", year: "2023", icon: "/images/certifications/aws.svg" },
     { name: "Zend PHP Certified Engineer", provider: "Zend", year: "2021", icon: "/images/certifications/zend-php.svg" }
@@ -67,6 +67,26 @@ export default function Home() {
           </svg>
         </div>
 
+        {/* Animated Waves */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <svg className="absolute bottom-0 w-full h-32 md:h-48 min-h-[100px] max-h-[150px]"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shapeRendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g className="wave-animation">
+              <use xlinkHref="#gentle-wave" x="48" y="0" className="fill-emerald-400/30 dark:fill-emerald-400/10" />
+              <use xlinkHref="#gentle-wave" x="48" y="3" className="fill-sky-400/40 dark:fill-sky-400/20" />
+              <use xlinkHref="#gentle-wave" x="48" y="5" className="fill-trail-gold/30 dark:fill-trail-gold/20" />
+              <use xlinkHref="#gentle-wave" x="48" y="7" className="fill-emerald-500/60 dark:fill-emerald-400/30" />
+            </g>
+          </svg>
+        </div>
+
         {/* Trail Path Glow */}
         <div className="absolute inset-0 trail-path pointer-events-none opacity-40" />
         
@@ -88,7 +108,7 @@ export default function Home() {
 
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6 inline-block px-4 py-1.5 rounded-full glass border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide">
-               Scalable Cloud & IT Infrastructure Architect
+               DevOps Engineer
             </div>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
               Hi, I&apos;m <span className="text-gradient">Adetiya Bagus Nusantara</span> ⛰️
@@ -112,9 +132,9 @@ export default function Home() {
                 href="https://www.linkedin.com/in/adetiya-bagus-nusantara-684688112/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-8 py-4 glass glass-hover text-slate-900 dark:text-white rounded-xl font-semibold inline-flex items-center gap-2 group/btn"
+                className="px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white rounded-xl font-semibold transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] inline-flex items-center gap-2 group/btn"
               >
-                <svg className="w-5 h-5 text-sky-400 transition-transform group-hover/btn:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-white transition-transform group-hover/btn:scale-110" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
                 LinkedIn

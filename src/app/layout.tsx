@@ -19,8 +19,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
-// ... existing imports
+import Spotlight from "@/components/Spotlight";
 
 export default function RootLayout({
   children,
@@ -38,6 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Spotlight />
           <div className="fixed top-6 right-6 z-50">
             <ThemeToggle />
           </div>
