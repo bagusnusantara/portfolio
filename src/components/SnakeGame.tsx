@@ -128,11 +128,11 @@ const SnakeGame: React.FC = () => {
     const isDark = theme === 'dark';
 
     // Clear background
-    ctx.fillStyle = isDark ? '#022c22' : '#ecfdf5'; // Forest Dark : Emerald-50
+    ctx.fillStyle = isDark ? '#064e3b' : '#a7f3d0'; // Forest-800 : Emerald-200
     ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
     // Draw grid lines
-    ctx.strokeStyle = isDark ? '#064e3b' : '#d1fae5'; // Forest-900 : Emerald-100
+    ctx.strokeStyle = isDark ? '#065f46' : '#6ee7b7'; // Forest-700 : Emerald-300
     ctx.lineWidth = 0.5;
     for (let i = 0; i <= GRID_COUNT; i++) {
       ctx.beginPath();
@@ -148,7 +148,7 @@ const SnakeGame: React.FC = () => {
     // Draw snake (Vine/Path)
     ctx.shadowBlur = 10;
     snake.forEach((segment, index) => {
-      ctx.fillStyle = index === 0 ? '#34d399' : '#059669'; // Emerald-400 : Emerald-600
+      ctx.fillStyle = index === 0 ? '#10b981' : '#059669'; // Emerald-500 : Emerald-600
       ctx.shadowColor = '#10b981';
       ctx.fillRect(segment.x * GRID_SIZE + 1, segment.y * GRID_SIZE + 1, GRID_SIZE - 2, GRID_SIZE - 2);
     });
@@ -156,6 +156,7 @@ const SnakeGame: React.FC = () => {
     // Draw food (Wild Berries)
     ctx.fillStyle = '#ef4444'; // Red-500
     ctx.shadowColor = '#ef4444';
+    ctx.shadowBlur = 10;
     ctx.beginPath();
     ctx.arc(
       food.x * GRID_SIZE + GRID_SIZE / 2,
@@ -194,8 +195,8 @@ const SnakeGame: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-400 mb-6 text-center max-w-xs px-4">
               Navigate the dense forest. Collect wild berries to sustain your journey. Avoid the mountain edge!
             </p>
-            <button 
-              className="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-all shadow-lg hover:scale-105"
+            <button
+              className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-bold transition-all shadow-lg hover:scale-105"
               onClick={() => setIsPlaying(true)}
             >
               INITIALIZE TREK
@@ -205,11 +206,11 @@ const SnakeGame: React.FC = () => {
         )}
 
         {isGameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-950/80 backdrop-blur-sm animate-fade-in">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-900/70 backdrop-blur-sm animate-fade-in">
             <h3 className="text-3xl font-bold text-white mb-2 uppercase tracking-tighter">Off the Trail!</h3>
             <p className="text-red-200 mb-6 font-mono text-sm">System recovery initiated...</p>
             <div className="text-5xl font-black text-white mb-8">{score}</div>
-            <button 
+            <button
               className="px-8 py-3 bg-white text-red-900 rounded-xl font-bold hover:bg-slate-100 transition-all shadow-xl"
               onClick={resetGame}
             >
@@ -229,7 +230,7 @@ const SnakeGame: React.FC = () => {
           Wild Berries
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-[1px] bg-emerald-900"></div>
+          <div className="w-4 h-[1px] bg-emerald-800"></div>
           Forest Grid
         </div>
       </div>

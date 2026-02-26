@@ -79,10 +79,10 @@ export default function Home() {
               <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g className="wave-animation">
-              <use xlinkHref="#gentle-wave" x="48" y="0" className="fill-emerald-400/30 dark:fill-emerald-400/10" />
-              <use xlinkHref="#gentle-wave" x="48" y="3" className="fill-sky-400/40 dark:fill-sky-400/20" />
-              <use xlinkHref="#gentle-wave" x="48" y="5" className="fill-trail-gold/30 dark:fill-trail-gold/20" />
-              <use xlinkHref="#gentle-wave" x="48" y="7" className="fill-emerald-500/60 dark:fill-emerald-400/30" />
+              <use xlinkHref="#gentle-wave" x="48" y="0" className="fill-emerald-400/50 dark:fill-emerald-400/15" />
+              <use xlinkHref="#gentle-wave" x="48" y="3" className="fill-sky-400/50 dark:fill-sky-400/15" />
+              <use xlinkHref="#gentle-wave" x="48" y="5" className="fill-amber-400/40 dark:fill-amber-400/15" />
+              <use xlinkHref="#gentle-wave" x="48" y="7" className="fill-emerald-500/60 dark:fill-emerald-400/25" />
             </g>
           </svg>
         </div>
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl w-full animate-fade-in-up flex flex-col items-center md:items-start md:flex-row gap-12">
           {/* Profile Photo Space */}
           <div className="relative group shrink-0 self-center">
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 via-trail-gold to-sky-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 via-amber-400 to-sky-500 rounded-full blur opacity-50 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-background bg-slate-800 dark:bg-slate-800 bg-slate-100">
               <Image 
                 src="/avatar.jpeg" 
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="mb-6 inline-block px-4 py-1.5 rounded-full glass border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide">
+            <div className="mb-6 inline-block px-4 py-1.5 rounded-full glass border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide">
                DevOps Engineer
             </div>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
@@ -117,22 +117,22 @@ export default function Home() {
               DevOps Engineer passionate about building reliable systems and automating the boring stuff. I enjoy solving infrastructure puzzles and making deployments feel effortless.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a 
-                href="https://github.com/bagusnusantara" 
-                target="_blank" 
+              <a
+                href="https://github.com/bagusnusantara"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-semibold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30_rgba(16,185,129,0.5)] inline-flex items-center gap-2 group/btn"
+                className="w-[200px] px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-semibold transition-all shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:shadow-[0_0_35px_rgba(16,185,129,0.6)] inline-flex items-center justify-center gap-2 group/btn"
               >
                 <svg className="w-5 h-5 transition-transform group-hover/btn:scale-110" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
-                GitHub Profile
+                GitHub
               </a>
-              <a 
-                href="https://www.linkedin.com/in/adetiya-bagus-nusantara-684688112/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/adetiya-bagus-nusantara-684688112/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white rounded-xl font-semibold transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] inline-flex items-center gap-2 group/btn"
+                className="w-[200px] px-8 py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold transition-all shadow-[0_0_25px_rgba(14,165,233,0.4)] hover:shadow-[0_0_35px_rgba(14,165,233,0.6)] inline-flex items-center justify-center gap-2 group/btn"
               >
                 <svg className="w-5 h-5 text-white transition-transform group-hover/btn:scale-110" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -144,8 +144,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cloud Ascent Section */}
-      <section className="py-12 px-6 relative">
+      {/* Cloud Ascent Section - Hidden on mobile */}
+      <section className="py-12 px-6 relative hidden md:block">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col gap-6 p-1 rounded-3xl bg-gradient-to-b from-sky-500/10 to-transparent">
             <div className="flex items-center justify-between px-6 pt-4">
@@ -157,13 +157,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Game Section */}
-      <section className="py-24 px-6 relative">
+      {/* Game Section - Hidden on mobile */}
+      <section className="py-24 px-6 relative hidden md:block">
         <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-background to-transparent" />
         <div className="max-w-screen-2xl mx-auto text-center relative z-10">
           <h2 className="text-4xl font-black mb-4 uppercase italic tracking-tighter text-foreground">Playable Games</h2>
           <p className="text-muted-foreground mb-16 font-mono text-sm tracking-widest">TAKE A BREAK. ENJOY THE RIDE.</p>
-          
+
           <div className="grid grid-cols-1 gap-16 items-start max-w-4xl mx-auto">
             <div className="flex flex-col gap-6 p-1 rounded-3xl bg-gradient-to-b from-emerald-500/10 to-transparent">
               <div className="flex items-center justify-between px-6 pt-4">
@@ -186,22 +186,22 @@ export default function Home() {
 
       {/* Experience Section */}
       <section className="py-24 px-6 max-w-5xl mx-auto relative group">
-        <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/50 via-trail-gold/50 to-transparent md:block hidden" />
+        <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/50 via-amber-400/50 to-transparent md:block hidden" />
         <h2 className="text-3xl font-bold mb-16 flex items-center gap-4 text-foreground">
-          <span className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-xl border border-emerald-500/20 italic">03</span>
+          <span className="w-12 h-12 rounded-2xl bg-emerald-500/15 flex items-center justify-center text-emerald-600 dark:text-emerald-300 text-xl border border-emerald-500/25 italic">03</span>
           Professional Experience
         </h2>
-        
+
         <div className="grid gap-8">
           {experiences.map((exp, i) => (
             <div key={i} className="glass glass-hover p-10 rounded-3xl group transition-all duration-700 hover:border-emerald-500/30 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-500/10 transition-colors" />
               <div className="flex flex-col md:flex-row justify-between mb-8 gap-4 relative z-10">
                 <div>
-                  <h3 className="text-2xl font-black text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors uppercase tracking-tight">
+                  <h3 className="text-2xl font-black text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors uppercase tracking-tight">
                     {exp.icon} {exp.title}
                   </h3>
-                  <p className="text-emerald-600 dark:text-emerald-400/80 font-bold tracking-widest text-sm mt-1 uppercase">@ {exp.company}</p>
+                  <p className="text-emerald-600 dark:text-emerald-300/80 font-bold tracking-widest text-sm mt-1 uppercase">@ {exp.company}</p>
                 </div>
                 <div className="text-muted-foreground text-[10px] font-black tracking-[0.2em] bg-secondary shadow-inner self-start px-4 py-2 rounded-xl mb-4 md:mb-0">
                   {exp.period}
@@ -227,7 +227,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-16 flex items-center gap-4 text-gradient uppercase italic">
             Technical Certifications
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {certifications.map((cert, i) => (
               <div key={i} className="glass glass-hover p-8 rounded-3xl flex items-center gap-8 group">
@@ -235,7 +235,7 @@ export default function Home() {
                   <Image src={cert.icon as string} alt={cert.name} width={48} height={48} className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <h4 className="font-black text-lg text-foreground leading-tight mb-2 uppercase tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{cert.name}</h4>
+                  <h4 className="font-black text-lg text-foreground leading-tight mb-2 uppercase tracking-tight group-hover:text-emerald-500 dark:group-hover:text-emerald-300 transition-colors">{cert.name}</h4>
                   <p className="text-muted-foreground text-[10px] font-bold tracking-[0.2em] uppercase">{cert.provider} / {cert.year}</p>
                 </div>
               </div>
@@ -248,17 +248,17 @@ export default function Home() {
       <section className="py-24 px-6 max-w-5xl mx-auto relative">
         <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/50 via-emerald-500/50 to-transparent md:block hidden" />
         <h2 className="text-3xl font-bold mb-16 flex items-center gap-4 text-foreground">
-          <span className="w-12 h-12 rounded-2xl bg-sky-500/10 flex items-center justify-center text-sky-600 dark:text-sky-400 text-xl border border-sky-500/20 italic">04</span>
+          <span className="w-12 h-12 rounded-2xl bg-sky-500/15 flex items-center justify-center text-sky-600 dark:text-sky-300 text-xl border border-sky-500/25 italic">04</span>
           Research Publications
         </h2>
-        
+
         <div className="grid gap-6">
           {publications.map((pub, i) => (
             <div key={i} className="glass glass-hover p-8 rounded-3xl group transition-all duration-700 hover:border-sky-500/30 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-sky-500/10 transition-colors" />
               <div className="flex flex-col md:flex-row justify-between gap-4 relative z-10">
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors leading-tight mb-3">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors leading-tight mb-3">
                     {pub.title}
                   </h3>
                   <div className="flex items-center gap-4 text-xs text-muted-foreground font-mono">
@@ -271,11 +271,11 @@ export default function Home() {
         </div>
 
         <div className="mt-12 text-center">
-          <a 
+          <a
             href="https://scholar.google.com/citations?user=MkeN6AYAAAAJ&hl=id&oi=ao"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 glass glass-hover text-sky-600 dark:text-sky-400 rounded-xl font-semibold text-sm group/link"
+            className="inline-flex items-center gap-2 px-6 py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold transition-all shadow-[0_0_25px_rgba(14,165,233,0.4)] hover:shadow-[0_0_35px_rgba(14,165,233,0.6)] group/link"
           >
             <svg className="w-5 h-5 transition-transform group-hover/link:scale-110" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 9a8 8 0 017.162 4.44L24 9.5z"/>

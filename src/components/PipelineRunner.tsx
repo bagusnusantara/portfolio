@@ -30,7 +30,7 @@ const PipelineRunner: React.FC = () => {
       height: 30,
       dy: 0,
       isJumping: false,
-      color: '#10b981' // Emerald-500 (Trail Runner)
+      color: '#10b981' // Emerald-500
     },
     obstacles: [] as { x: number; y: number; width: number; height: number; color: string }[],
     lastObstacleTime: 0,
@@ -87,7 +87,7 @@ const PipelineRunner: React.FC = () => {
         y: 150,
         width: 25,
         height: 30,
-        color: '#f59e0b' // Amber-500 (Rocks/Steep)
+        color: '#f59e0b' // Amber-500
       });
       gameState.current.lastObstacleTime = time;
     }
@@ -133,7 +133,7 @@ const PipelineRunner: React.FC = () => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     // Draw Mountains (Far Background)
-    ctx.fillStyle = isDark ? '#1e293b' : '#cbd5e1'; // Slate-800 : Slate-300
+    ctx.fillStyle = isDark ? '#334155' : '#94a3b8'; // Slate-700 : Slate-400
     ctx.beginPath();
     ctx.moveTo(0, 180);
     ctx.lineTo(100, 100);
@@ -145,7 +145,7 @@ const PipelineRunner: React.FC = () => {
     ctx.fill();
 
     // Draw Trail (Floor)
-    ctx.strokeStyle = isDark ? '#451a03' : '#78350f'; // Earth Brown : Red-900
+    ctx.strokeStyle = isDark ? '#451a03' : '#92400e'; // Earth Brown : Amber-700
     ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.moveTo(0, 180);
@@ -156,7 +156,7 @@ const PipelineRunner: React.FC = () => {
 
     // Draw Player (Runner)
     const { player, obstacles } = gameState.current;
-    
+
     // Shadow/Glow
     ctx.shadowBlur = 15;
     ctx.shadowColor = player.color;
@@ -221,12 +221,12 @@ const PipelineRunner: React.FC = () => {
         {!isPlaying && !isGameOver && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 dark:bg-slate-950/80 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 italic uppercase tracking-tighter pt-8">
-              <span className="text-emerald-600 dark:text-emerald-500">Pipeline</span> Navigator
+              <span className="text-emerald-600 dark:text-emerald-400">Pipeline</span> Navigator
             </h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6 text-center max-w-sm px-6">
               Maintain system stability! Navigate through pipeline stages and bypass operational incidents.
             </p>
-            <button className="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95">
+            <button className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95">
               START PIPELINE
             </button>
             <p className="mt-4 text-[10px] text-muted-foreground uppercase tracking-widest">Jump to bypass incidents</p>
@@ -234,10 +234,10 @@ const PipelineRunner: React.FC = () => {
         )}
 
         {isGameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-emerald-950/90 backdrop-blur-sm animate-fade-in">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-emerald-950/80 backdrop-blur-sm animate-fade-in">
             <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-tighter">Pipeline Interrupted</h3>
             <p className="text-emerald-200 mb-6">Service stability maintained for {score} seconds.</p>
-            <button 
+            <button
               className="px-8 py-3 bg-white text-emerald-900 rounded-xl font-bold hover:bg-slate-100 transition-all shadow-xl"
               onClick={(e) => { e.stopPropagation(); restartGame(); }}
             >
@@ -257,7 +257,7 @@ const PipelineRunner: React.FC = () => {
           Incidents
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-4 h-[2px] bg-earth-brown"></div>
+          <div className="w-4 h-[2px] bg-amber-800"></div>
           Operational Baseline
         </div>
       </div>
